@@ -45,17 +45,19 @@
 
 <script>
 export default {
-  name: "BasicFeatures",
+  name: 'BasicFeatures',
+
   data: function() {
     return {
       currentTime: new Date().toLocaleString(),
-      fullName: "Adam Lasak",
-      position: "full stack developer",
-      skills: ["JS", "Angular", "Vue (new)", "Oracle", "ASP.NET"],
+      fullName: 'Adam Lasak',
+      position: 'full stack developer',
+      skills: ['JS', 'Angular', 'Vue (new)', 'Oracle', 'ASP.NET'],
       skillToBeAdded: '',
       showErrorMessage: false
     };
   },
+  
   methods: {
     addSkill: function() {
       const me = this; // 'this' refers to Vue instance
@@ -63,7 +65,7 @@ export default {
 
       if (typedSkill) {
         me.skills.push(typedSkill);
-        me.skillToBeAdded = "";
+        me.skillToBeAdded = '';
         me.showErrorMessage = false;
       } else {
         me.showErrorMessage = true;

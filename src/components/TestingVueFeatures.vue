@@ -1,17 +1,20 @@
 <template>
   <div id="testing-vue-features">
-    <h3>Testing Vue Features</h3><br>
-    <BasicFeatures></BasicFeatures>
+    <h2>Testing Vue Features</h2><br>
+    <BasicFeatures></BasicFeatures><hr>
+    <PropertiesAndWatchers></PropertiesAndWatchers>
   </div>
 </template>
 
 <script>
 import BasicFeatures from "./BasicFeatures.vue";
+import PropertiesAndWatchers from './PropertiesAndWatchers.vue';
 
 export default {
   name: "TestingVueFeatures",
   components: {
-    BasicFeatures
+    BasicFeatures,
+    PropertiesAndWatchers
   }
 };
 </script>
@@ -20,8 +23,5 @@ export default {
 <style scoped>
 #testing-vue-features {
   text-align: left;
-}
-h3 {
-  margin: 40px 0 0;
 }
 </style>

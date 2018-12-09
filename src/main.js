@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import _ from 'lodash';
 import App from './App.vue';
 
 import HelloWorld from "./components/HelloWorld.vue";
@@ -19,7 +20,9 @@ const router = new VueRouter({ routes });
 new Vue({ // in constructor we're passing a settings object
   render: h => h(App),
   router,
-  created: function () { }, // hook methods -> dont use arrows functions (they dont have 'this' operator)
+
+  // hook methods -> dont use arrows functions (they dont have 'this' operator)
+  created: function () { },
   mounted: function () { }, // another hooks methods...
   updated: function () { },
   destroyed: function () { },
