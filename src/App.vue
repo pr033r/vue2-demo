@@ -1,9 +1,14 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png"><br>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <br>
     <ul id="navigation-bar">
-      <li><router-link to="/hello-world">Home</router-link></li>
-      <li><router-link to="/testing-vue-features">Testing Vue Features</router-link></li>
+      <li>
+        <router-link to="/hello-world">Home</router-link>
+      </li>
+      <li>
+        <router-link to="/testing-vue-features">Testing Vue Features</router-link>
+      </li>
     </ul>
     <router-view></router-view>
   </div>
@@ -12,8 +17,7 @@
 <script>
 export default {
   name: "app",
-  components: {
-  }
+  components: {}
 };
 </script>
 
@@ -28,9 +32,11 @@ export default {
   padding-top: 50px;
   margin: 0 auto;
 }
+
 a {
   color: #42b983;
 }
+
 #navigation-bar {
   list-style-type: none;
   margin: 0px;

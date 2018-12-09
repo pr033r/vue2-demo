@@ -16,7 +16,11 @@ const routes = [
 
 const router = new VueRouter({ routes });
 
-new Vue({
+new Vue({ // in constructor we're passing a settings object
   render: h => h(App),
   router,
+  created: function () { }, // hook methods -> dont use arrows functions (they dont have 'this' operator)
+  mounted: function () { }, // another hooks methods...
+  updated: function () { },
+  destroyed: function () { },
 }).$mount('#app');
