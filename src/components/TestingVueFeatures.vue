@@ -5,7 +5,11 @@
     <PropertiesAndWatchers></PropertiesAndWatchers><hr>
     <ClassAndStyleBingings></ClassAndStyleBingings><hr>
     <ConditionalRendering></ConditionalRendering><hr>
-    <ListRendering></ListRendering><hr>
+
+    <!-- Item in for won’t automatically pass any data to the component, because 
+    components have isolated scopes of their own. In order to pass the iterated 
+    data into the component, we should also use props -->
+    <ListRendering v-for="item in 2" v-bind:key="item"></ListRendering><hr>
   </div>
 </template>
 
