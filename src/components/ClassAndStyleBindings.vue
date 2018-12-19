@@ -21,6 +21,7 @@
     <div v-bind:style="grayCube"></div>
     <div v-bind:style="[grayCube, {backgroundColor: '#ccc'}]"></div>
     <div v-bind:style="[grayCube, {backgroundColor: '#eee'}]"></div>
+    <br><br>
   </div>
 </template>
 
@@ -32,8 +33,8 @@
         hasError: null,
         isActive: true,
         grayCube: {
-          width: '50px',
-          height: '50px',
+          width: '30px',
+          height: '30px',
           float: 'left',
           'background-color': 'gray', // either kebab-case
           backgroundColor: '#aaa', // or camelCase
