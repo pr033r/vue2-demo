@@ -1,6 +1,6 @@
 <template>
   <div id="conditional-rendering">
-
+    <h2>Conditional rendering</h2>
     <!-- v-if is also lazy: if the condition is false on initial render, it will not do anything 
     - the conditional block won’t be rendered until the condition becomes true for the first time.
 

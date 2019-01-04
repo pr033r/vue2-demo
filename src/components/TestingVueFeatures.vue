@@ -10,6 +10,8 @@
     components have isolated scopes of their own. In order to pass the iterated 
     data into the component, we should also use props -->
     <ListRendering v-for="item in 2" v-bind:key="item"></ListRendering><hr>
+
+    <EventHandling></EventHandling>
   </div>
 </template>
 
@@ -19,6 +21,7 @@ import PropertiesAndWatchers from './PropertiesAndWatchers.vue';
 import ClassAndStyleBingings from './ClassAndStyleBindings.vue';
 import ConditionalRendering from './ConditionalRendering.vue';
 import ListRendering from './ListRendering.vue';
+import EventHandling from './EventHandling.vue';
 
 export default {
   name: "TestingVueFeatures",
@@ -28,6 +31,7 @@ export default {
     ClassAndStyleBingings,
     ConditionalRendering,
     ListRendering,
+    EventHandling,
   }
 };
 </script>

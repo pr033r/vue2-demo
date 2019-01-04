@@ -1,6 +1,7 @@
 <template>
   <!-- id for el (element) property -->
   <div id="basic-features"> 
+    <h2>Basic features</h2>
     <strong 
       v-bind:title="currentTime" 
       v-once

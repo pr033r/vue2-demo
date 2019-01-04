@@ -1,5 +1,6 @@
 <template>
   <div id="properties-and-watchers">
+    <h2>Properties and watchers</h2>
     Current cached date: {{ cachedCurrentDate }}<br>
     Current date: {{ currentDate() }}<br>
     First name: <input v-model="firstName"><br>

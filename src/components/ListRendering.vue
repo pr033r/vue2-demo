@@ -1,6 +1,6 @@
 <template>
   <div>
-
+    <h2>List rendering</h2>
     <ul>
       <!-- 
       'for' reuse and reorder existing elements, you need to provide a unique 
@@ -29,7 +29,7 @@
     <u>Using filter:</u>
     <ul>
       <li
-      v-for="(item, index) in rangeForFilterUsage" 
+      v-for="(item, index) in filterUsage" 
       :key="index"
       >
         {{ item }}
@@ -73,9 +73,9 @@
     },
 
     computed: {
-      rangeForFilterUsage: {
+      filterUsage: {
         get: function() {
-          return this.rangeForFilterUsage;//.filter(x => x > 3);
+          return this.rangeForFilterUsage.filter(x => x > 3);
         }, // set(newValue) {...}
       }
     },

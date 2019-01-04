@@ -1,5 +1,6 @@
 <template>
   <div id="class-and-style-bindings">
+    <h2>Class and style bindings</h2>
     <span 
       class="output-box"
       v-bind:class="{ active: isActive, 'text-danger': hasError }"
