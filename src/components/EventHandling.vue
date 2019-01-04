@@ -79,13 +79,17 @@
 
     System modifier keys:
     .ctrl .alt .shift .meta (win logo)
+
+    Mouse modifiers:
+    .left .right .middle
     -->
     <input placeholder="enter" @keyup.enter="defaultAlert">
     <input placeholder="space" @keyup.32="defaultAlert">
     <input placeholder="escape" @keyup.escape="defaultAlert"><br><br>
 
     <input placeholder="ctrl+x" @keyup.ctrl.88="defaultAlert">
-    <input placeholder="click+ctrl" @click.ctrl="defaultAlert"><br><br>
+    <input placeholder="click+ctrl" @click.ctrl="defaultAlert">
+    <input placeholder="middle mouse button" @click.middle="defaultAlert"><br><br>
 
     <!-- this will fire even if Alt or Shift is also pressed -->
     <button @click.ctrl="defaultAlert">click.ctrl</button>
