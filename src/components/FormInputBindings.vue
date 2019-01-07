@@ -48,7 +48,26 @@
       <option>Gandalf</option>
     </select><br>
 
-    Selected multiple: {{ selectedMultiple }}
+    Selected multiple: {{ selectedMultiple }}<br><br>
+
+    <input 
+      type="checkbox" 
+      v-model="toggle" 
+      true-value="yeah"
+      false-value="nope"
+    > Custom boolean value: 
+    {{ toggle }}
+
+    <!-- lazy modifier sync after change events instead input events -->
+    <!-- If you want whitespace from user input to be trimmed automatically -->
+    <input 
+      v-model.lazy.trim="toggle"
+      v-bind:placeholder="bindedPlaceholder"
+    ><br>
+
+    <input 
+      v-model.number="defaultConvertedNumber"
+    >&nbsp;Converted number:{{ defaultConvertedNumber }}<br>
   </div>
 </template>
 
@@ -62,6 +81,9 @@
         choosen: '',
         selected: '',
         selectedMultiple: [],
+        toggle: '',
+        bindedPlaceholder: 'LAZY binded placeholder',
+        defaultConvertedNumber: 5,
       }
     },
   }
