@@ -13,6 +13,10 @@
 
     <EventHandling></EventHandling>
     <FormInputBindings></FormInputBindings>
+
+    <h2>Components basic</h2>
+    <ComponentsBasics></ComponentsBasics>
+
   </div>
 </template>
 
@@ -24,6 +28,7 @@ import ConditionalRendering from './ConditionalRendering.vue';
 import ListRendering from './ListRendering.vue';
 import EventHandling from './EventHandling.vue';
 import FormInputBindings from './FormInputBindings.vue';
+import ComponentsBasics from './ComponentsBasics.vue';
 
 export default {
   name: "TestingVueFeatures",
@@ -35,6 +40,7 @@ export default {
     ListRendering,
     EventHandling,
     FormInputBindings,
+    ComponentsBasics,
   }
 };
 </script>
