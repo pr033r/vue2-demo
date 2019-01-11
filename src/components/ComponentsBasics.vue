@@ -10,27 +10,39 @@
 
     <div id="dynamic-component-demo" class="demo">
       <button
-        v-for="tab of tabs"
-        :key="tab"
-        :class="['tab-button', { active: currentTab === tab }]"
-        :click="currentTab = tab"
-      >{{ tab }}</button>
+        v-for="tab in tabs"
+        :key="tab.name"
+        :class="['tab-button', { active: currentTab.name === tab.name }]"
+        @click="currentTab = tab"
+      >{{ tab.name }}</button>
 
       <component 
-        :is="currentTabComponent"
+        v-bind:is="currentTab.component"
         class="tab"
-      ></component>
+      ></component><br>
+
+      <!-- Custom directive to focus element. -->
+      <input type="text" v-focus>
+
+      <!-- 
+      This will lead to issues when using components with elements that have such restrictions.
+      <table>
+        <blog-post-row></blog-post-row>
+      </table>
+
+      'is' operator is designed for that
+      <table>
+        <tr is="blog-post-row"></tr>
+      </table> -->
+
     </div>
   </div>
 </template>
 
 <script>
 import BlogPost from './BlogPost.vue';
-import Vue from 'vue';
 
-// GIVES ERROR:
-// You are using the runtime-only build of Vue where the template compiler is not available. 
-// Either pre-compile the templates into render functions, or use the compiler-included build.
+// ALTERNATIVE OPTION (RUN-TIME COMPILER MUST BE ENABLED)
 // ------------
 // Vue.component('tabHome', { 
 //   template: '<div>Home component</div>' 
@@ -41,8 +53,6 @@ import Vue from 'vue';
 // Vue.component('tabArchive', { 
 //   template: '<div>Archive component</div>' 
 // })
-
-// RATHER USE:
 
 export default {
   data() {
@@ -73,8 +83,12 @@ export default {
           }
         }
       ],
-      currentTab: 'Home',
+      currentTab: {},
     }
+  },
+
+  created() {
+    this.currentTab = this.tabs[0];
   },
 
   methods: {
@@ -85,6 +99,7 @@ export default {
   },
 
   computed: {
+    // used for Vue.component(..., {}) example
     currentTabComponent: function() {
       return `tab${this.currentTab}`;
     },
@@ -94,7 +109,15 @@ export default {
     BlogPost,
   },
 
-  filters: {}
+  filters: {},
+
+  directives: {
+    focus: {
+      inserted: function(el, /* binding, vnode, oldVnode */) {
+        el.focus();
+      }
+    }
+  },
 }
 </script>
 
