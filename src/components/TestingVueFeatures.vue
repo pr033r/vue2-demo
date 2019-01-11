@@ -11,8 +11,8 @@
     data into the component, we should also use props -->
     <ListRendering v-for="item in 2" v-bind:key="item"></ListRendering><hr>
 
-    <EventHandling></EventHandling>
-    <FormInputBindings></FormInputBindings>
+    <EventHandling></EventHandling><hr>
+    <FormInputBindings></FormInputBindings><hr>
 
     <h2>Components basic</h2>
     <ComponentsBasics></ComponentsBasics>

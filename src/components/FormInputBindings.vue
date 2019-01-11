@@ -72,21 +72,21 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        multilineText: '',
-        trueFalseCheckbox: false,
-        fellowshipMembers: [],
-        choosen: '',
-        selected: '',
-        selectedMultiple: [],
-        toggle: '',
-        bindedPlaceholder: 'LAZY binded placeholder',
-        defaultConvertedNumber: 5,
-      }
-    },
-  }
+export default {
+  data() {
+    return {
+      multilineText: '',
+      trueFalseCheckbox: false,
+      fellowshipMembers: [],
+      choosen: '',
+      selected: '',
+      selectedMultiple: [],
+      toggle: '',
+      bindedPlaceholder: 'LAZY binded placeholder',
+      defaultConvertedNumber: 5,
+    }
+  },
+}
 </script>
 
 <style scoped>

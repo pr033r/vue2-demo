@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="event-handling">
     <h2>Event handling</h2>
     <button v-on:click="incrementcCounter">Increment</button>
     <!-- OR <button v-on:click="incrementcCounter($event)">Increment</button> -->

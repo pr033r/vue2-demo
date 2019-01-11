@@ -27,34 +27,34 @@
 </template>
 
 <script>
-  export default {
-    name: 'ClassAndStyleBindings',
-    data: function() {
+export default {
+  name: 'ClassAndStyleBindings',
+  data: function() {
+    return {
+      hasError: null,
+      isActive: true,
+      grayCube: {
+        width: '30px',
+        height: '30px',
+        float: 'left',
+        'background-color': 'gray', // either kebab-case
+        backgroundColor: '#aaa', // or camelCase
+      },
+    };
+  },
+  
+  computed: {
+    // assigning particular class to element is mostly done via computed
+    outputBoxChangeStatus: function() {
+      // we can also return an array of classes
       return {
-        hasError: null,
-        isActive: true,
-        grayCube: {
-          width: '30px',
-          height: '30px',
-          float: 'left',
-          'background-color': 'gray', // either kebab-case
-          backgroundColor: '#aaa', // or camelCase
-        },
-      };
-    },
-    
-    computed: {
-      // assigning particular class to element is mostly done via computed
-      outputBoxChangeStatus: function() {
-        // we can also return an array of classes
-        return {
-          active: this.isActive && this.hasError,
-          'text-danger': this.hasError,
-        }
+        active: this.isActive && this.hasError,
+        'text-danger': this.hasError,
       }
-    },
+    }
+  },
 
-  }
+}
 </script>
 
 <style scoped>
