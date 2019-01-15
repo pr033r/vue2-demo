@@ -22,7 +22,7 @@
       ></component><br>
 
       <!-- Custom directive to focus element. -->
-      <input type="text" v-focus>
+      <input placeholder="Custom directive with focus" type="text" v-focus>
 
       <!-- 
       This will lead to issues when using components with elements that have such restrictions.

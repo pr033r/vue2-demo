@@ -15,7 +15,9 @@
     <FormInputBindings></FormInputBindings><hr>
 
     <h2>Components basic</h2>
-    <ComponentsBasics></ComponentsBasics>
+    <ComponentsBasics></ComponentsBasics><hr>
+
+    <ComponentRegistration></ComponentRegistration>
 
   </div>
 </template>
@@ -29,6 +31,7 @@ import ListRendering from './ListRendering.vue';
 import EventHandling from './EventHandling.vue';
 import FormInputBindings from './FormInputBindings.vue';
 import ComponentsBasics from './ComponentsBasics.vue';
+import ComponentRegistration from './componentsInDepth/ComponentRegistration.vue';
 
 export default {
   name: "TestingVueFeatures",
@@ -41,6 +44,7 @@ export default {
     EventHandling,
     FormInputBindings,
     ComponentsBasics,
+    ComponentRegistration,
   }
 };
 </script>
