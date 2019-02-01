@@ -1,23 +1,42 @@
 <template>
   <div id="testing-vue-features">
     <h2>Testing Vue Features</h2><br>
-    <BasicFeatures></BasicFeatures><hr>
-    <PropertiesAndWatchers></PropertiesAndWatchers><hr>
-    <ClassAndStyleBingings></ClassAndStyleBingings><hr>
-    <ConditionalRendering></ConditionalRendering><hr>
+    <basic-features /><hr>
+    <properties-and-watchers /><hr>
+    <class-and-style-bingings /><hr>
+    <conditional-rendering /><hr>
 
     <!-- Item in for won’t automatically pass any data to the component, because 
     components have isolated scopes of their own. In order to pass the iterated 
     data into the component, we should also use props -->
-    <ListRendering v-for="item in 2" v-bind:key="item"></ListRendering><hr>
+    <list-rendering v-for="item in 2" v-bind:key="item" /><hr>
 
-    <EventHandling></EventHandling><hr>
-    <FormInputBindings></FormInputBindings><hr>
+    <event-handling /><hr>
+    <form-input-bindings /><hr>
 
     <h2>Components basic</h2>
-    <ComponentsBasics></ComponentsBasics><hr>
+    <components-basics /><hr>
 
-    <ComponentRegistration></ComponentRegistration>
+    <component-registration /><hr>
+
+    <!-- 
+    We have to bind numbers, booleans, arrays and objects!
+    Err when we get to boolean a number: Expected Boolean, got Number with value 3. 
+
+    v-bind="bindObjectToProps" is equivalent for:
+    v-bind:father="bindObjectToProps.father"
+    v-bind:legacy="bindObjectToProps.legacy"
+    -->
+    <Props 
+      :age="54" 
+      :is-hero="isAragornHero" 
+      :skills="['sword', 'bow']"
+      :refers-to-members="{
+        primary: 'Gandalf',
+        secondary: 'Legolas',
+      }"
+      v-bind="bindObjectToProps"
+    ></Props>
 
   </div>
 </template>
@@ -32,9 +51,19 @@ import EventHandling from './EventHandling.vue';
 import FormInputBindings from './FormInputBindings.vue';
 import ComponentsBasics from './ComponentsBasics.vue';
 import ComponentRegistration from './componentsInDepth/ComponentRegistration.vue';
+import Props from './componentsInDepth/Props.vue';
 
 export default {
   name: "TestingVueFeatures",
+  data() {
+    return {
+      isAragornHero: true,
+      bindObjectToProps: {
+        father: 'Arathorn',
+        legacy: true,
+      }
+    }
+  },
   components: {
     BasicFeatures,
     PropertiesAndWatchers,
@@ -45,6 +74,7 @@ export default {
     FormInputBindings,
     ComponentsBasics,
     ComponentRegistration,
+    Props,
   }
 };
 </script>
